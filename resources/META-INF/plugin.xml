@@ -1,0 +1,55 @@
+<idea-plugin>
+  <id>top.guyi.ipojo.idea.plugin</id>
+  <name>ipojo</name>
+  <version>1.0</version>
+  <vendor email="guyi@guyi-maple.top" url="https://github.com/guyi-maple">guyi-maple</vendor>
+
+  <description>用于guyi-ipojo注解式API的编译插件，当前实现了compile.info编译配置文件的字段提示</description>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="top.guyi.ipojo.idea.plugin.compile.CompileFileTypeFactory" />
+    <fileType name="Ipojo Compile" language="JSON" fieldName="INSTANCE" extensions="compile"
+              implementationClass="top.guyi.ipojo.idea.plugin.compile.CompileFileType" />
+    <completion.contributor
+            language="JSON"
+            implementationClass="top.guyi.ipojo.idea.plugin.compile.CompileCompletionContributor" />
+
+    <fileTypeFactory implementation="top.guyi.ipojo.idea.plugin.attach.AttachFileTypeFactory" />
+    <fileType name="Ipojo Attach" language="JSON" fieldName="INSTANCE" extensions="attach"
+              implementationClass="top.guyi.ipojo.idea.plugin.attach.AttachFileType" />
+    <completion.contributor
+            language="JSON"
+            implementationClass="top.guyi.ipojo.idea.plugin.attach.AttachCompletionContributor" />
+
+    <fileTypeFactory implementation="top.guyi.ipojo.idea.plugin.configuration.ConfigurationFileTypeFactory" />
+    <fileType name="Felix Configuration" language="JSON" fieldName="INSTANCE" extensions="felix"
+              implementationClass="top.guyi.ipojo.idea.plugin.felix.FelixFileType" />
+    <completion.contributor
+            language="JSON"
+            implementationClass="top.guyi.ipojo.idea.plugin.felix.FelixCompletionContributor" />
+
+    <fileTypeFactory implementation="top.guyi.ipojo.idea.plugin.felix.FelixFileTypeFactory" />
+    <fileType name="Ipojo Configuration" language="JSON" fieldName="INSTANCE" extensions="configuration"
+              implementationClass="top.guyi.ipojo.idea.plugin.configuration.ConfigurationFileType" />
+    <completion.contributor
+            language="JSON"
+            implementationClass="top.guyi.ipojo.idea.plugin.configuration.ConfigurationCompletionContributor" />
+
+  </extensions>
+
+  <actions>
+    <action id="Ipojo.Initialization" class="top.guyi.ipojo.idea.plugin.actions.InitializationAction"
+            text="Initialization From Template"
+            description="初始化Ipojo项目">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>

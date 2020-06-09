@@ -1,0 +1,228 @@
+[
+  {
+    "value": "name",
+    "text": "项目名称"
+  },
+  {
+    "value": "package",
+    "text": "项目根包",
+    "handler": {
+      "name": "package"
+    }
+  },
+  {
+    "value": "type",
+    "text": "打包类型",
+    "defaults": [
+      {
+        "value": "bundle",
+        "text": "插件包"
+      },
+      {
+        "value": "component",
+        "text": "支持库,默认"
+      }
+    ]
+  },
+  {
+    "value": "jdk",
+    "text": "JDK版本",
+    "defaults": [
+      {
+        "value": "none",
+        "text": "不重写JDK版本,默认"
+      },
+      {
+        "value": "7",
+        "text": "Java7"
+      },
+      {
+        "value": "8",
+        "text": "Java8"
+      }
+    ]
+  },
+  {
+    "value": "attach",
+    "text": "附加编译配置",
+    "icon": "attach",
+    "handler": {
+      "name": "file",
+      "parameters": {
+        "suffix": ".attach"
+      }
+    }
+  },
+  {
+    "value": "dependencies",
+    "text": "额外依赖",
+    "children": [
+      {
+        "value": "groupId"
+      },
+      {
+        "value": "artifactId"
+      },
+      {
+        "value": "version"
+      },
+      {
+        "value": "scope",
+        "defaults": [
+          {
+            "value": "compile",
+            "text": "编译时有效"
+          },
+          {
+            "value": "provide",
+            "text": "编译时无效"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "value": "exclude",
+    "text": "排除项",
+    "children": [
+      {
+        "value": "export",
+        "text": "被排除的导出包,正则匹配"
+      },
+      {
+        "value": "import",
+        "text": "被排除的导入包,正则匹配"
+      },
+      {
+        "value": "scope",
+        "text": "根据生命周期排除依赖,正则匹配"
+      },
+      {
+        "value": "copy",
+        "text": "排除依赖复制项,正则匹配"
+      }
+    ]
+  },
+  {
+    "value": "configuration",
+    "text": "配置项",
+    "icon": "configuration",
+    "handler": {
+      "name": "configuration",
+      "parameters": {
+        "scope": "project"
+      }
+    }
+  },
+  {
+    "value": "env",
+    "text": "环境变量"
+  },
+  {
+    "value": "manifest",
+    "text": "MANIFEST.MF文件配置",
+    "icon": "compile",
+    "children": [
+      {
+        "value": "Import-Package",
+        "text": "导入的包",
+        "icon": "compile",
+        "handler": {
+          "name": "package"
+        },
+        "children": [
+          {
+            "value": "override",
+            "icon": "compile",
+            "text": "是否覆盖继承的配置"
+          },
+          {
+            "value": "value",
+            "text": "覆写内容",
+            "icon": "compile",
+            "handler": {
+              "name": "package"
+            }
+          }
+        ]
+      },
+      {
+        "value": "Export-Package",
+        "text": "导出的包",
+        "icon": "compile",
+        "handler": {
+          "name": "package"
+        },
+        "children": [
+          {
+            "value": "override",
+            "icon": "compile",
+            "text": "是否覆盖继承的配置"
+          },
+          {
+            "value": "value",
+            "text": "覆写内容",
+            "icon": "compile",
+            "handler": {
+              "name": "package"
+            }
+          }
+        ]
+      },
+      {
+        "value": "Bundle-Name",
+        "text": "Bundle名称"
+      },
+      {
+        "value": "Bundle-SymbolicName",
+        "text": "Bundle-SymbolicName"
+      },
+      {
+        "value": "Bundle-Version",
+        "text": "Bundle版本号"
+      }
+    ]
+  },
+  {
+    "value": "project",
+    "text": "项目配置",
+    "children": [
+      {
+        "value": "finalName",
+        "text": "打包名称"
+      },
+      {
+        "value": "version",
+        "text": "项目版本号"
+      },
+      {
+        "value": "dependencies",
+        "text": "额外依赖",
+        "children": [
+          {
+            "value": "groupId"
+          },
+          {
+            "value": "artifactId"
+          },
+          {
+            "value": "version"
+          },
+          {
+            "value": "scope",
+            "defaults": [
+              {
+                "value": "compile",
+                "text": "编译时有效"
+              },
+              {
+                "value": "provide",
+                "text": "编译时无效"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

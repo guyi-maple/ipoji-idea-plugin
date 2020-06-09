@@ -1,0 +1,38 @@
+[
+  {
+    "value": "bundles",
+    "text": "运行依赖",
+    "children": [
+      {
+        "value": "groupId",
+        "text": "groupId"
+      },
+      {
+        "value": "artifactId",
+        "text": "artifactId"
+      },
+      {
+        "value": "version",
+        "text": "version"
+      }
+    ]
+  },
+  {
+    "value": "config",
+    "text": "Felix容器配置",
+    "children": [
+      {
+        "value": "felix.auto.deploy.action",
+        "text": "动作,默认值'install,start'"
+      },
+      {
+        "value": "org.osgi.framework.storage.clean",
+        "text": "清理方式,默认值'onFirstInit'"
+      },
+      {
+        "value": "felix.auto.start.1",
+        "text": "第一顺序启动的Bundle"
+      }
+    ]
+  }
+]
